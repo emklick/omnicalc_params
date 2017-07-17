@@ -41,7 +41,7 @@ class CalculationsController < ApplicationController
   def flex_random_number
     
     @random_number_flex = params["random_number_flex"].to_i
-    @random_number_output_flex = rand(100)-rand(50)
+    @random_number_output_flex = rand(50...100)
     
     # random number between 50 & 100
     
@@ -135,7 +135,7 @@ class CalculationsController < ApplicationController
   def random_number_form
     
     @random_number = params["random_number"].to_i
-    @random_number_output = rand(@maximum)-rand(@minimum)
+    @random_number_output = rand(@minimum...@maximum)
     
     render("calculations/random_number_form_template.html.erb")
   end
@@ -143,7 +143,7 @@ class CalculationsController < ApplicationController
   def random_number_results
    
     @random_number = params["random_number"].to_i
-    @random_number_output = rand(@maximum)-rand(@minimum)
+    @random_number_output = rand(@minimum...@maximum)
     
     render("calculations/random_number_results_template.html.erb")
   end
