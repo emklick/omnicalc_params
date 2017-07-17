@@ -47,7 +47,7 @@ class CalculationsController < ApplicationController
     render("calculations/square_form_template.html.erb")
   end
   
-  def process_square
+  def square_results
     # The incoming parameters for this action look like {"the_user_number"=>"5"}
     # Rails stores that hash in a variable called params
     
@@ -57,7 +57,31 @@ class CalculationsController < ApplicationController
     render("calculations/square_results_template.html.erb")
   end
   
+  
+  
+  def square_root_form
+    
+    render("calculations/square_form_template.html.erb")
+  end
+  
+  def square_root_results
+    # The incoming parameters for this action look like {"the_user_number"=>"5"}
+    # Rails stores that hash in a variable called params
+    
+    @user_number = params["the_user_number"].to_i
+    @squared_root = Math.sqrt(@user_number)
+    
+    render("calculations/square_results_template.html.erb")
+  end  
+  
+  
+  
   def payment_form
+    
+    render("calculations/payment_form_template.html.erb")
+  end
+  
+  def payment_results
    
     interest_rate/years/present_value
     
@@ -71,11 +95,50 @@ class CalculationsController < ApplicationController
 
     # @monthly_payment = @principal*(monthly_interest/(1-(1+monthly_interest)**number_of_monthly_payments))
     
-    render("calculations/payment_form_template.html.erb")
+    render("calculations/payment_results_template.html.erb")
   end
   
   
   
+  def random_number_form
+    
+    render("calculations/random_number_form_template.html.erb")
+  end
+  
+  def random_number_results
+   
+    
+    
+    render("calculations/random_number_results_template.html.erb")
+  end
+  
+  
+  
+   def word_count_form
+    
+    render("calculations/word_count_form_template.html.erb")
+  end
+  
+  def random_number_results
+   
+    
+    
+    render("calculations/word_count_results_template.html.erb")
+  end
+  
+  
+  
+   def stats_form
+    
+    render("calculations/stats_form_template.html.erb")
+  end
+  
+  def stats_results
+   
+    
+    
+    render("calculations/stats_results_template.html.erb")
+  end
   
   
 end

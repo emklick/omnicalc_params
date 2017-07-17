@@ -6,23 +6,25 @@ Rails.application.routes.draw do
   
   get("/flexible/payment/:interest_rate/:years/:principal/", { :controller => "calculations", :action => "flex_payment" })
   
-  get("/flexible/random/:@random_number", { :controller => "calculations", :action => "flex_random" })
+  get("/flexible/random/:@random_number", { :controller => "calculations", :action => "flex_random_number" })
   
   
   
   get("/square/new", { :controller => "calculations", :action => "square_form" })
   
-  get("/square/results", { :controller => "calculations", :action => "process_square_root_form" })
-   
-  get("/square/results", { :controller => "calculations", :action => "process_square_root_form" })
-   
+  get("/square/results", { :controller => "calculations", :action => "square_root_form" })
+  
   get("/payment/interest_rate/years/present_value", { :controller => "calculations", :action => "payment_form" })
   
-  get("/random/results", { :controller => "calculations", :action => "random_form" })
+  get("/random/results", { :controller => "calculations", :action => "random_number_form" })
   
-  get("/word_count/results", { :controller => "calculations", :action => "process_wordcount" })
   
-  get("/descriptive_stats/results", { :controller => "calculations", :action => "process_stats" })
+  
+  get("/word_count/results", { :controller => "calculations", :action => "word_count_form" })
+  
+  get("/descriptive_stats/results", { :controller => "calculations", :action => "stats_form" })
+  
+  
   
   
   
