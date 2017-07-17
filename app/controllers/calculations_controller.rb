@@ -17,7 +17,7 @@ class CalculationsController < ApplicationController
     render("calculations/flexible_square_template.html.erb")
   end
   
-   def flex_payment
+  def flex_payment
     
     @monthly_interest = (params["a_number"].to_i)
     @number_of_monthly_payments = @years*-12
@@ -27,7 +27,7 @@ class CalculationsController < ApplicationController
     render("calculations/flexible_square_template.html.erb")
   end
   
-   def flex_random_number
+  def flex_random_number
     
     @random_number = rand(100)-rand(50)
     
