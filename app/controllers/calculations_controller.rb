@@ -21,9 +21,9 @@ class CalculationsController < ApplicationController
   
   def flex_payment
     
-    @monthly_interest_basispoints_flex = (params["interest_rate_flex"].to_i)
-    @number_of_years_flex = (params["years_flex"].to_i)
-    @principal_flex = (params["principal_flex"].to_i)
+    @monthly_interest_basispoints_flex = params["interest_rate_flex"].to_i
+    @number_of_years_flex = params["years_flex"].to_i
+    @principal_flex = params["principal_flex"].to_i
     
     
     @number_of_monthly_payments_flex = @number_of_years_flex*-12
@@ -76,9 +76,9 @@ class CalculationsController < ApplicationController
     
     # interest_rate/years/present_value
     
-    @monthly_interest_basispoints = (params["interest_rate"].to_i)
-    @number_of_years = (params["years"].to_i)
-    @principal = (params["principal"].to_i)
+    @monthly_interest_basispoints = params["interest_rate"].to_i
+    @number_of_years = params["years"].to_i
+    @principal = params["principal"].to_i
     
     
     @number_of_monthly_payments = @number_of_years*-12

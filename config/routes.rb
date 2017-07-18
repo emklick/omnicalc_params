@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  get("/",        { :controller => "homepage", :action => "homepage" })
+  # get("/",        { :controller => "homepage", :action => "homepage" })
   
   
   
@@ -22,9 +22,9 @@ Rails.application.routes.draw do
   
   get("/random/:random_number", {:controller => "calculations", :action => "random_number_form"})
   
-  get("/word_count/", {:controller => "calculations", :action => "word_count_form"})
+  get("/word_count/:user_text/:special_word", {:controller => "calculations", :action => "word_count_form"})
   
-  get("/descriptive_stats", {:controller => "calculations", :action => "stats_form"})
+  get("/descriptive_stats/:list_of_numbers", {:controller => "calculations", :action => "stats_form"})
   
   
   
