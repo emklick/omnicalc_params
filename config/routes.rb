@@ -8,9 +8,9 @@ Rails.application.routes.draw do
   
   get("/flexible/square_root/:a_number_flex", { :controller => "calculations", :action => "flex_square_root"})
   
-  # get("/flexible/square_root/:square_root_number_flex", { :controller => "calculations", :action => "flex_square_root" })
+  get("/flexible/payment/:basis_points/:number_of_years/:present_value", {:controller => "calculations", :action => "flex_payment"})
   
-  # get("/flexible/payment/:interest_rate_flex/:years_flex/:principal_flex/", { :controller => "calculations", :action => "flex_payment" })
+  # get("/flexible/payment/:basis_points/:number_of_years/:present_value", { :controller => "calculations", :action => "flex_payment" })
   
   # get("/flexible/random/:random_number_flex", { :controller => "calculations", :action => "flex_random_number" })
   
