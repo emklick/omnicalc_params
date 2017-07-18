@@ -28,7 +28,7 @@ class CalculationsController < ApplicationController
     @monthly_interest_percentage_flex = @monthly_interest_basispoints_flex*10000
     @monthly_interest_per_period_flex = @monthly_interest_percentage_flex/12
     
-#     @monthly_interest_percent_flex = <%= number_to_percentage(@monthly_interest_basispoints_flex) %>
+    # @monthly_interest_percent_flex = <%= number_to_percentage(@monthly_interest_basispoints_flex) %>
 
     # <%= number_to_currency(@number_of_years_flex) %>
     
@@ -90,7 +90,7 @@ class CalculationsController < ApplicationController
     @monthly_interest_percentage_flex = (@monthly_interest_basispoints_flex*10000).to_i
     @monthly_interest_per_period_flex = (@monthly_interest_percentage_flex/12).to_i
     
-#     @monthly_interest_percent_flex = <%= number_to_percentage(@monthly_interest_basispoints_flex) %>
+    # @monthly_interest_percent_flex = <%= number_to_percentage(@monthly_interest_basispoints_flex) %>
 
     # <%= number_to_currency(@number_of_years_flex) %>
     
