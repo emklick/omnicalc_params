@@ -15,14 +15,13 @@ Rails.application.routes.draw do
   
   get("/square/:user_number", { :controller => "calculations", :action => "square_form"})
   
+  get("square_root/:square_root_number", { :controller => "calculations", :action => "square_root_form"})
   
-  # get("/square/:a_number", { :controller => "calculations", :action => "square_form" })
+  get("/payment/:basis_points/:number_of_years/:present_value", { :controller => "calculations", :action => "payment_form"}) 
   
-  # get("/square_root/:square_root_number", { :controller => "calculations", :action => "square_root_form" })
+  get("random/:min/:max", { :controller => "calculations", :action => "random_number_form"})
   
-  # get("/payment/:interest_rate/:years/:principal", { :controller => "calculations", :action => "payment_form"})
   
-  # get("/random/:random_number", {:controller => "calculations", :action => "random_number_form"})
   
   # get("/word_count/:user_text/:special_word", {:controller => "calculations", :action => "word_count_form"})
   
