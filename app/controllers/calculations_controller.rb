@@ -34,10 +34,11 @@ class CalculationsController < ApplicationController
     
     @denomonator_step_one = (1 - @one_plus_rate_per_period)
     
-    @numerator = (@monthly_interest_per_period_flex*@present_value_flex).to_i
-    @denomonator = (@denomonator_step_one).to_i
+    @numerator = (@monthly_interest_per_period_flex*@present_value_flex)
+    @denomonator = (@denomonator_step_one)
     
     @monthly_payment_flex = @numerator/(1-(1+@monthly_interest_per_period_flex)**(@number_of_monthly_payments_flex))
+  
    
     
     render("calculations/flexible_payment_template.html.erb")
@@ -80,23 +81,23 @@ class CalculationsController < ApplicationController
   
   def payment_form
     
-    @monthly_interest_basispoints = params["the_user_interest"].to_f
-    @number_of_years = params["the_user_payment_years"].to_i
-    @present_value = params["the_user_principal"].to_i
+    @monthly_interest_basispoints_flex = params["the_user_interest"].to_f
+    @number_of_years_flex = params["the_user_payment_years"].to_i
+    @present_value_flex = params["the_user_principal"].to_i
     
-    @monthly_interest_percentage = @monthly_interest_basispoints/10000
-    @monthly_interest_per_period = @monthly_interest_percentage/12
+    @monthly_interest_percentage_flex = @monthly_interest_basispoints_flex/10000
+    @monthly_interest_per_period_flex = @monthly_interest_percentage_flex/12
     
-    @number_of_monthly_payments = @number_of_years*-12
+    @number_of_monthly_payments_flex = @number_of_years_flex*-12
     
-    @one_plus_rate_per_period = (1 + @monthly_interest_per_period)**@number_of_monthly_payments
+    @one_plus_rate_per_period = (1 + @monthly_interest_per_period_flex)**@number_of_monthly_payments_flex
     
     @denomonator_step_one = (1 - @one_plus_rate_per_period)
     
-    @numerator = (@monthly_interest_per_period*@present_value).to_i
-    @denomonator = (@denomonator_step_one).to_i
+    @numerator = (@monthly_interest_per_period_flex*@present_value_flex)
+    @denomonator = (@denomonator_step_one)
     
-    @monthly_payment = @numerator/(1-(1+@monthly_interest_per_period)**(@number_of_monthly_payments))
+    @monthly_payment_flex = @numerator/@denomonator
     
     render("calculations/payment_form_template.html.erb")
   end
@@ -197,23 +198,23 @@ class CalculationsController < ApplicationController
   
   def process_payment_form
     
-    @monthly_interest_basispoints = params["the_user_interest"].to_f
-    @number_of_years = params["the_user_payment_years"].to_i
-    @present_value = params["the_user_principal"].to_i
+    @monthly_interest_basispoints_flex = params["the_user_interest"].to_f
+    @number_of_years_flex = params["the_user_payment_years"].to_i
+    @present_value_flex = params["the_user_principal"].to_i
     
-    @monthly_interest_percentage = @monthly_interest_basispoints/10000
-    @monthly_interest_per_period = @monthly_interest_percentage/12
+    @monthly_interest_percentage_flex = @monthly_interest_basispoints_flex/10000
+    @monthly_interest_per_period_flex = @monthly_interest_percentage_flex/12
     
-    @number_of_monthly_payments = @number_of_years*-12
+    @number_of_monthly_payments_flex = @number_of_years_flex*-12
     
-    @one_plus_rate_per_period = (1 + @monthly_interest_per_period)**@number_of_monthly_payments
+    @one_plus_rate_per_period = (1 + @monthly_interest_per_period_flex)**@number_of_monthly_payments_flex
     
     @denomonator_step_one = (1 - @one_plus_rate_per_period)
     
-    @numerator = (@monthly_interest_per_period*@present_value).to_i
-    @denomonator = (@denomonator_step_one).to_i
+    @numerator = (@monthly_interest_per_period_flex*@present_value_flex)
+    @denomonator = (@denomonator_step_one)
     
-    @monthly_payment = @numerator/(1-(1+@monthly_interest_per_period)**(@number_of_monthly_payments))
+    @monthly_payment_flex = @numerator/@denomonator
     
     render("calculations/process_payment_form_template.html.erb")
   end
