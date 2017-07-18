@@ -26,7 +26,7 @@ class CalculationsController < ApplicationController
     @present_value_flex = params["present_value"].to_i
     
     @monthly_interest_percentage_flex = @monthly_interest_basispoints_flex/10000
-    # @monthly_interest_per_period_flex = @monthly_interest_percentage_flex/12
+    @monthly_interest_per_period_flex = @monthly_interest_percentage_flex/12
     
     # @monthly_interest_percent_flex = <%= number_to_percentage(@monthly_interest_basispoints_flex) %>
 
@@ -43,7 +43,7 @@ class CalculationsController < ApplicationController
     
     # @monthly_payment_flex = @numerator/@denomonator
     
-    @monthly_payment_flex = @monthly_interest_percentage_flex/12
+    @monthly_payment_flex = 45645
     
     render("calculations/flexible_payment_template.html.erb")
   end
