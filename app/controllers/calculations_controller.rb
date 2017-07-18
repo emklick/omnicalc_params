@@ -140,7 +140,7 @@ class CalculationsController < ApplicationController
   
   def stats_form
      
-    @numbers = (params["stats_numbers"]).to_c
+    @numbers = (params["stats_numbers"]).to_s
      
     # @sorted_numbers = @numbers.sort
 
@@ -154,7 +154,7 @@ class CalculationsController < ApplicationController
 
     # @median = @sorted_numbers[((@count/2)+(1/2))]
 
-    @sum = @numbers.sum
+    # @sum = @numbers.sum
 
     # @mean = @sum/@count
 
@@ -248,7 +248,7 @@ class CalculationsController < ApplicationController
   
   def process_stats_form
      
-    @numbers = (params["stats_numbers"]).to_c
+    @numbers = (params["stats_numbers"]).to_s
      
     # @sorted_numbers = @numbers.sort
 
@@ -262,7 +262,7 @@ class CalculationsController < ApplicationController
 
     # @median = @sorted_numbers[((@count/2)+(1/2))]
 
-    @sum = @numbers.sum
+    # @sum = @numbers.sum
 
     # @mean = @sum/@count
 
