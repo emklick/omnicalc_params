@@ -120,28 +120,28 @@ class CalculationsController < ApplicationController
   end
   
   
-  # def word_count_form
+  def word_count_form
      
-  #   @text = params[:user_text]
-  #   @special_word = params[:user_word]
+    @text = params[:user_text]
+    @special_word = params[:special_word]
 
-  #   @word_count = @text.split(" ").length
+    @word_count = @text.split(" ").length
 
-  #   @character_count_with_spaces = @text.length
+    @character_count_with_spaces = @text.length
 
-  #   @character_count_without_spaces = @text.length-@text.count(" ")
+    @character_count_without_spaces = @text.length-@text.count(" ")
 
-  #   punctuation = @text.chomp(".")
+    punctuation = @text.chomp(".")
     
-  #   downcased_words = punctuation.downcase.split(" ")
+    downcased_words = punctuation.downcase.split(" ")
     
-  #   downcased_special = @special_word.downcase
+    downcased_special = @special_word.downcase
 
-  #   @occurrences = downcased_words.count(downcased_special)
+    @occurrences = downcased_words.count(downcased_special)
      
     
-  #   render("calculations/word_count_form_template.html.erb")
-  # end
+    render("calculations/word_count_form_template.html.erb")
+  end
   
   
   # def stats_form

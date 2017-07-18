@@ -21,11 +21,9 @@ Rails.application.routes.draw do
   
   get("random/:min/:max", { :controller => "calculations", :action => "random_number_form"})
   
+  get("/word_count/:user_text/:special_word", {:controller => "calculations", :action => "word_count_form"})
   
-  
-  # get("/word_count/:user_text/:special_word", {:controller => "calculations", :action => "word_count_form"})
-  
-  # get("/descriptive_stats/:list_of_numbers", {:controller => "calculations", :action => "stats_form"})
+  get("/descriptive_stats/:list_of_numbers", {:controller => "calculations", :action => "stats_form"})
   
   
   
