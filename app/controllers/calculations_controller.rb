@@ -25,7 +25,7 @@ class CalculationsController < ApplicationController
     @number_of_years_flex = params["number_of_years"].to_i
     @present_value_flex = params["present_value"].to_i
     
-    # @monthly_interest_percentage_flex = @monthly_interest_basispoints_flex*10000
+    @monthly_interest_percentage_flex = @monthly_interest_basispoints_flex/10000
     # @monthly_interest_per_period_flex = @monthly_interest_percentage_flex/12
     
     # @monthly_interest_percent_flex = <%= number_to_percentage(@monthly_interest_basispoints_flex) %>
@@ -38,13 +38,12 @@ class CalculationsController < ApplicationController
     
     # @denomonator_step_one = 1 - @one_plus_rate_per_period
     
-    @numerator = 100000
-    @denomonator = 50
-    
     # @numerator = @monthly_interest_per_period_flex*@present_value_flex
     # @denomonator = @denomonator_step_one
     
-    @monthly_payment_flex = @numerator/@denomonator
+    # @monthly_payment_flex = @numerator/@denomonator
+    
+    @monthly_payment_flex = @monthly_interest_percentage_flex/12
     
     render("calculations/flexible_payment_template.html.erb")
   end
