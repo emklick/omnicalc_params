@@ -141,34 +141,34 @@ class CalculationsController < ApplicationController
   
   def stats_form
      
-    @numbers = (params["stats_numbers"]).to_s
+    @numbers = params["stats_numbers"].gsub(',', '').split.map(&:to_f)
      
-    # @sorted_numbers = @numbers.sort
+    @sorted = @numbers.sort
 
-    # @count = @sorted_numbers.count
+    @count = @numbers.count
 
-    # @minimum_stats = (@numbers.min).to_i
+    @minimum = @numbers.min
 
-    # @maximum_stats = (@numbers.max).to_i
+    @maximum = @numbers.max
 
-    # @range = @maximum_stats - @minimum_stats
+    @range = @maximum-@minimum
 
-    # @median = @sorted_numbers[((@count/2)+(1/2))]
+    @median = @sorted_numbers[((@count/2)+(1/2))]
 
-    # @sum = @numbers.sum
+    @sum = @numbers.sum
 
-    # @mean = @sum/@count
+    @mean = @sum/@count
 
-    # @demeaned=@numbers.map { |i| i - @mean}
-    # @squared = @demeaned.map { |i| i**2}
-    # @variance = @squared.sum / @count
+    @demeaned=@numbers.map { |i| i - @mean}
+    @squared = @demeaned.map { |i| i**2}
+    @variance = @squared.sum / @count
 
-    # @variance = @squared.sum / @count
+    @variance = @squared.sum / @count
 
-    # @standard_deviation = Math.sqrt(@variance)
+    @standard_deviation = Math.sqrt(@variance)
 
-    # @mode_count = @numbers.map { |i| @numbers.count(i)}
-    # @mode = @numbers[@mode_count.index(@mode_count.sort[@mode_count.count - 1])]
+    @mode_count = @numbers.map { |i| @numbers.count(i)}
+    @mode = @numbers[@mode_count.index(@mode_count.sort[@mode_count.count - 1])]
     
     render("calculations/stats_form_template.html.erb")
   end
@@ -249,34 +249,34 @@ class CalculationsController < ApplicationController
   
   def process_stats_form
      
-    @numbers = (params["stats_numbers"]).to_s
+    @numbers = params["stats_numbers"].gsub(',', '').split.map(&:to_f)
      
-    # @sorted_numbers = @numbers.sort
+    @sorted = @numbers.sort
 
-    # @count = @sorted_numbers.count
+    @count = @numbers.count
 
-    # @minimum_stats = (@numbers.min).to_i
+    @minimum = @numbers.min
 
-    # @maximum_stats = (@numbers.max).to_i
+    @maximum = @numbers.max
 
-    # @range = @maximum_stats-@minimum_stats
+    @range = @maximum-@minimum
 
-    # @median = @sorted_numbers[((@count/2)+(1/2))]
+    @median = @sorted_numbers[((@count/2)+(1/2))]
 
-    # @sum = @numbers.sum
+    @sum = @numbers.sum
 
-    # @mean = @sum/@count
+    @mean = @sum/@count
 
-    # @demeaned=@numbers.map { |i| i - @mean}
-    # @squared = @demeaned.map { |i| i**2}
-    # @variance = @squared.sum / @count
+    @demeaned=@numbers.map { |i| i - @mean}
+    @squared = @demeaned.map { |i| i**2}
+    @variance = @squared.sum / @count
 
-    # @variance = @squared.sum / @count
+    @variance = @squared.sum / @count
 
-    # @standard_deviation = Math.sqrt(@variance)
+    @standard_deviation = Math.sqrt(@variance)
 
-    # @mode_count = @numbers.map { |i| @numbers.count(i)}
-    # @mode = @numbers[@mode_count.index(@mode_count.sort[@mode_count.count - 1])]
+    @mode_count = @numbers.map { |i| @numbers.count(i)}
+    @mode = @numbers[@mode_count.index(@mode_count.sort[@mode_count.count - 1])]
     
     render("calculations/process_stats_form_template.html.erb")
   end
