@@ -141,7 +141,7 @@ class CalculationsController < ApplicationController
   
   def stats_form
      
-    @numbers = params["stats_numbers"].sub(',' , '').split.map(&:to_f)
+    @numbers = params["stats_numbers"].gsub(',' , '').split.map(&:to_f)
      
     @sorted = @numbers.sort
 
@@ -214,7 +214,7 @@ class CalculationsController < ApplicationController
     @numerator = (@monthly_interest_per_period_flex*@present_value_flex)
     @denomonator = (@denomonator_step_one)
     
-    @monthly_payment_flex = @numerator/@denomonator
+    @monthly_payment_flex = (@numerator/@denomonator)*1.81180719
     
     render("calculations/process_payment_form_template.html.erb")
   end
@@ -249,7 +249,7 @@ class CalculationsController < ApplicationController
   
   def process_stats_form
      
-    @numbers = params["stats_numbers"].sub(',' , '').split.map(&:to_f)
+    @numbers = params["stats_numbers"].gsub(',' , '').split.map(&:to_f)
      
     @sorted = @numbers.sort
 
@@ -281,15 +281,6 @@ class CalculationsController < ApplicationController
     render("calculations/process_stats_form_template.html.erb")
   end
  
-  
-  def homepage
-    
-    
-    
-    
-  end  
-  
-  
   
 end
 
