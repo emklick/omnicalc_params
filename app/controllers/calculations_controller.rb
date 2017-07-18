@@ -80,9 +80,9 @@ class CalculationsController < ApplicationController
   
   def payment_form
     
-    @monthly_interest_basispoints = params["basis_points"].to_f
-    @number_of_years = params["number_of_years"].to_i
-    @present_value = params["present_value"].to_i
+    @monthly_interest_basispoints = params["interest_input"].to_f
+    @number_of_years = params["years_input"].to_i
+    @present_value = params["principal_input"].to_i
     
     @monthly_interest_percentage = @monthly_interest_basispoints/10000
     @monthly_interest_per_period = @monthly_interest_percentage/12
