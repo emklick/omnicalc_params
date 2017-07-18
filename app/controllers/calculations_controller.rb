@@ -140,13 +140,13 @@ class CalculationsController < ApplicationController
   
   def stats_form
      
-    @numbers = params["stats_numbers"].to_s
+    @numbers = (params["stats_numbers"]).to_c
      
-    # @sorted_numbers = (@numbers.sort).to_s
+    # @sorted_numbers = @numbers.sort
 
-    # @count = @numbers.count
+    # @count = @sorted_numbers.count
 
-    @minimum_stats = (@numbers.min).to_i
+    # @minimum_stats = (@numbers.min).to_i
 
     # @maximum_stats = (@numbers.max).to_i
 
@@ -154,7 +154,7 @@ class CalculationsController < ApplicationController
 
     # @median = @sorted_numbers[((@count/2)+(1/2))]
 
-    # @sum = @numbers.sum
+    @sum = @numbers.sum
 
     # @mean = @sum/@count
 
@@ -180,7 +180,7 @@ class CalculationsController < ApplicationController
     # The incoming parameters for this action look like {"the_user_number"} => "5"
     # Rails stores that hash in a variable called params
     
-    @user_number = params["the_user_number"].to_f
+    @user_number = params["the_user_number"].to_param
     @squared_number = @user_number**2
  
     render("calculations/process_square_form_template.html.erb")
@@ -248,13 +248,13 @@ class CalculationsController < ApplicationController
   
   def process_stats_form
      
-    @numbers = params["stats_numbers"].to_s
+    @numbers = (params["stats_numbers"]).to_c
      
-    # @sorted_numbers = (@numbers.sort).to_s
+    # @sorted_numbers = @numbers.sort
 
-    # @count = @numbers.count
+    # @count = @sorted_numbers.count
 
-    @minimum_stats = (@numbers.min).to_i
+    # @minimum_stats = (@numbers.min).to_i
 
     # @maximum_stats = (@numbers.max).to_i
 
@@ -262,7 +262,7 @@ class CalculationsController < ApplicationController
 
     # @median = @sorted_numbers[((@count/2)+(1/2))]
 
-    # @sum = @numbers.sum
+    @sum = @numbers.sum
 
     # @mean = @sum/@count
 
