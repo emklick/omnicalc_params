@@ -144,39 +144,39 @@ class CalculationsController < ApplicationController
   end
   
   
-  # def stats_form
+  def stats_form
      
-  #   @stats_numbers = params[:list_of_numbers].gsub(',', '').split.map(&:to_f)
+    @numbers = params[:list_of_numbers].gsub(',', '').split.map(&:to_f)
      
-  #   @sorted_numbers = @numbers.sort
+    @sorted_numbers = @numbers.sort
 
-  #   @count = @numbers.count
+    @count = @numbers.count
 
-  #   @minimum_stats = @numbers.min
+    @minimum_stats = @numbers.min
 
-  #   @maximum_stats = @numbers.max
+    @maximum_stats = @numbers.max
 
-  #   @range = @maximum-@minimum
+    @range = @maximum_stats-@minimum_stats
 
-  #   @median = @sorted_numbers[((@count/2)+(1/2))]
+    @median = @sorted_numbers[((@count/2)+(1/2))]
 
-  #   @sum = @numbers.sum
+    @sum = @numbers.sum
 
-  #   @mean = @sum/@count
+    @mean = @sum/@count
 
-  #   @demeaned=@numbers.map { |i| i - @mean}
-  #   @squared = @demeaned.map { |i| i**2}
-  #   @variance = @squared.sum / @count
+    @demeaned=@numbers.map { |i| i - @mean}
+    @squared = @demeaned.map { |i| i**2}
+    @variance = @squared.sum / @count
 
-  #   @variance = @squared.sum / @count
+    @variance = @squared.sum / @count
 
-  #   @standard_deviation = Math.sqrt(@variance)
+    @standard_deviation = Math.sqrt(@variance)
 
-  #   @mode_count = @numbers.map { |i| @numbers.count(i)}
-  #   @mode = @numbers[@mode_count.index(@mode_count.sort[@mode_count.count - 1])]
+    @mode_count = @numbers.map { |i| @numbers.count(i)}
+    @mode = @numbers[@mode_count.index(@mode_count.sort[@mode_count.count - 1])]
     
-  #   render("calculations/stats_form_template.html.erb")
-  # end
+    render("calculations/stats_form_template.html.erb")
+  end
   
   
   
