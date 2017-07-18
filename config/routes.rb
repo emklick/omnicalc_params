@@ -19,21 +19,21 @@ Rails.application.routes.draw do
   
   get("/payment/new", { :controller => "calculations", :action => "payment_form"}) 
   
-  get("random/new", { :controller => "calculations", :action => "random_number_form"})
+  get("/random/new", { :controller => "calculations", :action => "random_number_form"})
   
   
-  # get("/word_count/:user_text/:special_word", {:controller => "calculations", :action => "word_count_form"})
+  get("/word_count/:user_text/new", {:controller => "calculations", :action => "word_count_form"})
   
-  # get("/descriptive_stats/:list_of_numbers", {:controller => "calculations", :action => "stats_form"})
+  get("/descriptive_stats/new", {:controller => "calculations", :action => "stats_form"})
   
   
   # get("/square/:user_number", { :controller => "calculations", :action => "square_form"})
   
-  # get("square_root/:square_root_number", { :controller => "calculations", :action => "square_root_form"})
+  # get("/square_root/:square_root_number", { :controller => "calculations", :action => "square_root_form"})
   
   # get("/payment/:basis_points/:number_of_years/:present_value", { :controller => "calculations", :action => "payment_form"}) 
   
-  # get("random/:min/:max", { :controller => "calculations", :action => "random_number_form"})
+  # get("/random/:min/:max", { :controller => "calculations", :action => "random_number_form"})
   
   # get("/word_count/:user_text/:special_word", {:controller => "calculations", :action => "word_count_form"})
   
