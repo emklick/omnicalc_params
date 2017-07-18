@@ -116,20 +116,22 @@ class CalculationsController < ApplicationController
      
     @text = params["user_text"].to_s
     @special_word = params["special_word"].to_s
-    
-    @word_count = @text.split(" ").length
+
+    @word_count = (@text.split(" ").length)
 
     @character_count_with_spaces = @text.length
 
     @character_count_without_spaces = @text.length-@text.count(" ")
 
-    punctuation = @text.chomp(".")
+    # punctuation = @text.sub(".", "").to_s
     
-    downcased_words = punctuation.downcase.split(" ")
+    # downcased_words = punctuation.downcase.split(" ").to_s
     
-    downcased_special = @special_word.downcase
+    # downcased_special = (@special_word.downcase).to_s
 
-    @occurrences = downcased_words.count(downcased_special)
+    @occurrences = (@text.sub(".", "").downcase.split(" ").count(@special_word.downcase)).to_s
+    
+    # downcased_words.count(downcased_special).to_i
      
     
     render("calculations/word_count_form_template.html.erb")
@@ -138,7 +140,7 @@ class CalculationsController < ApplicationController
   
   def stats_form
      
-    @numbers = params["list_of_numbers_input"].gsub(',', '').split.map(&:to_f)
+    @numbers = params["stats_numbers"].to_f
      
     @sorted_numbers = @numbers.sort
 
@@ -229,23 +231,16 @@ class CalculationsController < ApplicationController
   
   def process_word_count_form
      
-    @text = params["user_text"].to_f
-    @special_word = params["special_word"].to_f
+    @text = params["user_text"].to_s
+    @special_word = params["special_word"].to_s
 
-    @word_count = (@text.split(" ").length).to_i
+    @word_count = (@text.split(" ").length)
 
     @character_count_with_spaces = @text.length
 
     @character_count_without_spaces = @text.length-@text.count(" ")
 
-    punctuation = @text.chomp(".")
-    
-    downcased_words = punctuation.downcase.split(" ")
-    
-    downcased_special = @special_word.downcase
-
-    @occurrences = downcased_words.count(downcased_special)
-     
+    @occurrences = (@text.sub(".", "").downcase.split(" ").count(@special_word.downcase)).to_s
     
     render("calculations/process_word_count_form_template.html.erb")
   end
@@ -253,7 +248,7 @@ class CalculationsController < ApplicationController
   
   def process_stats_form
      
-    @numbers = params["stats_numbers"].gsub(',', '').split.map(&:to_f)
+    @numbers = params["stats_numbers"].to_f
      
     @sorted_numbers = @numbers.sort
 
