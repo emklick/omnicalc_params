@@ -62,7 +62,7 @@ class CalculationsController < ApplicationController
   
   def square_form
     
-    @user_number = params["user_number"].to_i
+    @user_number = params["number_input"].to_i
     @squared_number = @user_number**2
     
     render("calculations/square_form_template.html.erb")
@@ -71,7 +71,7 @@ class CalculationsController < ApplicationController
   
   def square_root_form
     
-    @user_number_square_root = params["square_root_number"].to_i
+    @user_number_square_root = params["number_input_square_root"].to_i
     @squared_root = Math.sqrt(@user_number_square_root)
     
     render("calculations/square_root_form_template.html.erb")
@@ -104,8 +104,8 @@ class CalculationsController < ApplicationController
   
   def random_number_form
     
-    @minimum = params["min"].to_i
-    @maximum = params["max"].to_i
+    @minimum = params["random_minimum_input"].to_i
+    @maximum = params["random_maximum_input"].to_i
     @random_number_output = rand(@minimum...@maximum)
     
     render("calculations/random_number_form_template.html.erb")
@@ -114,8 +114,8 @@ class CalculationsController < ApplicationController
   
   def word_count_form
      
-    @text = params[:user_text]
-    @special_word = params[:special_word]
+    @text = params["word_count_input"]
+    @special_word = params["special_word_input"]
 
     @word_count = @text.split(" ").length
 
@@ -138,7 +138,7 @@ class CalculationsController < ApplicationController
   
   def stats_form
      
-    @numbers = params[:list_of_numbers].gsub(',', '').split.map(&:to_f)
+    @numbers = params["list_of_numbers_input"].gsub(',', '').split.map(&:to_f)
      
     @sorted_numbers = @numbers.sort
 
