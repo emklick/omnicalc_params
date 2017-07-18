@@ -77,7 +77,7 @@ class CalculationsController < ApplicationController
     @user_number_square_root = params["square_root_number"].to_i
     @squared_root = Math.sqrt(@user_number_square_root)
     
-    render("calculations/square_form_template.html.erb")
+    render("calculations/square_root_form_template.html.erb")
   end
 
   
