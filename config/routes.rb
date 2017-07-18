@@ -10,10 +10,10 @@ Rails.application.routes.draw do
   
   get("/flexible/payment/:basis_points/:number_of_years/:present_value", {:controller => "calculations", :action => "flex_payment"})
   
-  # get("/flexible/payment/:basis_points/:number_of_years/:present_value", { :controller => "calculations", :action => "flex_payment" })
+  get("/flexible/random/:random_number_flex", {:controller => "calculations", :action => "flex_random_number" })
   
-  # get("/flexible/random/:random_number_flex", { :controller => "calculations", :action => "flex_random_number" })
   
+  get("/square/:user_number", { :controller => "calculations", :action => "square_form"})
   
   
   # get("/square/:a_number", { :controller => "calculations", :action => "square_form" })
