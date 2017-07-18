@@ -114,9 +114,9 @@ class CalculationsController < ApplicationController
   
   def word_count_form
      
-    @text = params["word_count_input"]
-    @special_word = params["special_word_input"]
-
+    @text = params["user_text"].to_s
+    @special_word = params["special_word"].to_s
+    
     @word_count = @text.split(" ").length
 
     @character_count_with_spaces = @text.length
@@ -229,10 +229,10 @@ class CalculationsController < ApplicationController
   
   def process_word_count_form
      
-    @text = params["word_count_input"]
-    @special_word = params["special_word_input"]
+    @text = params["user_text"].to_f
+    @special_word = params["special_word"].to_f
 
-    @word_count = @text.split(" ").length
+    @word_count = (@text.split(" ").length).to_i
 
     @character_count_with_spaces = @text.length
 
@@ -253,7 +253,7 @@ class CalculationsController < ApplicationController
   
   def process_stats_form
      
-    @numbers = params["list_of_numbers_input"].gsub(',', '').split.map(&:to_f)
+    @numbers = params["stats_numbers"].gsub(',', '').split.map(&:to_f)
      
     @sorted_numbers = @numbers.sort
 
