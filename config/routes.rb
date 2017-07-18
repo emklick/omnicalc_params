@@ -26,9 +26,7 @@ Rails.application.routes.draw do
   
   get("/descriptive_stats/new", {:controller => "calculations", :action => "stats_form"})
   
-  
-  
-  
+
   
   get("/square/results", { :controller => "calculations", :action => "process_square_form"})
   
