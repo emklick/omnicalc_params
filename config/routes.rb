@@ -6,25 +6,27 @@ Rails.application.routes.draw do
   
   get("/flexible/square/:a_number_flex", { :controller => "calculations", :action => "flex_square" })
   
-  get("/flexible/square_root/:square_root_number_flex", { :controller => "calculations", :action => "flex_square_root" })
+  get("/flexible/square_root/:a_number_flex", { :controller => "calculations", :action => "flex_square_root"})
   
-  get("/flexible/payment/:interest_rate_flex/:years_flex/:principal_flex/", { :controller => "calculations", :action => "flex_payment" })
+  # get("/flexible/square_root/:square_root_number_flex", { :controller => "calculations", :action => "flex_square_root" })
   
-  get("/flexible/random/:random_number_flex", { :controller => "calculations", :action => "flex_random_number" })
+  # get("/flexible/payment/:interest_rate_flex/:years_flex/:principal_flex/", { :controller => "calculations", :action => "flex_payment" })
+  
+  # get("/flexible/random/:random_number_flex", { :controller => "calculations", :action => "flex_random_number" })
   
   
   
-  get("/square/:a_number", { :controller => "calculations", :action => "square_form" })
+  # get("/square/:a_number", { :controller => "calculations", :action => "square_form" })
   
-  get("/square_root/:square_root_number", { :controller => "calculations", :action => "square_root_form" })
+  # get("/square_root/:square_root_number", { :controller => "calculations", :action => "square_root_form" })
   
-  get("/payment/:interest_rate/:years/:principal", { :controller => "calculations", :action => "payment_form"})
+  # get("/payment/:interest_rate/:years/:principal", { :controller => "calculations", :action => "payment_form"})
   
-  get("/random/:random_number", {:controller => "calculations", :action => "random_number_form"})
+  # get("/random/:random_number", {:controller => "calculations", :action => "random_number_form"})
   
-  get("/word_count/:user_text/:special_word", {:controller => "calculations", :action => "word_count_form"})
+  # get("/word_count/:user_text/:special_word", {:controller => "calculations", :action => "word_count_form"})
   
-  get("/descriptive_stats/:list_of_numbers", {:controller => "calculations", :action => "stats_form"})
+  # get("/descriptive_stats/:list_of_numbers", {:controller => "calculations", :action => "stats_form"})
   
   
   
