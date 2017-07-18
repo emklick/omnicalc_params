@@ -25,8 +25,8 @@ class CalculationsController < ApplicationController
     @number_of_years_flex = params["number_of_years"].to_i
     @present_value_flex = params["present_value"].to_i
     
-    @monthly_interest_percentage_flex = @monthly_interest_basispoints_flex*10000
-    @monthly_interest_per_period_flex = @monthly_interest_percentage_flex/12
+    @monthly_interest_percentage_flex = (@monthly_interest_basispoints_flex*10000).to_i
+    @monthly_interest_per_period_flex = (@monthly_interest_percentage_flex/12).to_i
     
     # @monthly_interest_percent_flex = <%= number_to_percentage(@monthly_interest_basispoints_flex) %>
 
@@ -34,11 +34,11 @@ class CalculationsController < ApplicationController
     
     # number_of_monthly_payments_flex = @number_of_years*-12
     
-    @one_plus_rate_per_period = (1 + @monthly_interest_per_period_flex)**@number_of_monthly_payments_flex
+    @one_plus_rate_per_period = ((1 + @monthly_interest_per_period_flex)**@number_of_monthly_payments_flex).to_i
     
-    @denomonator_step_one = 1 - @one_plus_rate_per_period
-    # 
-    @numerator = (@monthly_interest_per_period_flex*@present_value_flex)
+    @denomonator_step_one = (1 - @one_plus_rate_per_period).to_i
+    
+    @numerator = (@monthly_interest_per_period_flex*@present_value_flex).to_i
     @denomonator = @denomonator_step_one
     
     @monthly_payment_flex = @numerator/@denomonator
