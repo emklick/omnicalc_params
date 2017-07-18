@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   get("/random/new", { :controller => "calculations", :action => "random_number_form"})
   
   
-  get("/word_count/:user_text/new", {:controller => "calculations", :action => "word_count_form"})
+  get("/word_count/new", {:controller => "calculations", :action => "word_count_form"})
   
   get("/descriptive_stats/new", {:controller => "calculations", :action => "stats_form"})
   
