@@ -141,7 +141,7 @@ class CalculationsController < ApplicationController
   
   def stats_form
      
-    @numbers = params["stats_numbers"].gsub(',', '').split.map(&:to_f)
+    @numbers = params["stats_numbers"].sub(',' , '').split.map(&:to_f)
      
     @sorted = @numbers.sort
 
@@ -249,7 +249,7 @@ class CalculationsController < ApplicationController
   
   def process_stats_form
      
-    @numbers = params["stats_numbers"].gsub(',', '').split.map(&:to_f)
+    @numbers = params["stats_numbers"].sub(',' , '').split.map(&:to_f)
      
     @sorted = @numbers.sort
 
@@ -281,6 +281,15 @@ class CalculationsController < ApplicationController
     render("calculations/process_stats_form_template.html.erb")
   end
  
+  
+  def homepage
+    
+    
+    
+    
+  end  
+  
+  
   
 end
 
