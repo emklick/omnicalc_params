@@ -154,24 +154,24 @@ class CalculationsController < ApplicationController
 
     @maximum = @numbers.max
 
-    # @range = @maximum-@minimum
+    @range = @maximum-@minimum
 
-    # @median = @sorted_numbers[((@count/2)+(1/2))]
+    @median = @sorted[(@count/2)]
 
     @sum = @numbers.sum
 
-    # @mean = @sum/@count
+    @mean = @sum/@count
 
-    # @demeaned=@numbers.map { |i| i - @mean}
-    # @squared = @demeaned.map { |i| i**2}
-    # @variance = @squared.sum / @count
+    @demeaned=@numbers.map { |i| i - @mean}
+    @squared = @demeaned.map { |i| i**2}
+    @variance = @squared.sum / @count
 
-    # @variance = @squared.sum / @count
+    @variance = @squared.sum / @count
 
-    # @standard_deviation = Math.sqrt(@variance)
+    @standard_deviation = Math.sqrt(@variance)
 
-    # @mode_count = @numbers.map { |i| @numbers.count(i)}
-    # @mode = @numbers[@mode_count.index(@mode_count.sort[@mode_count.count - 1])]
+    @mode_count = @numbers.map { |i| @numbers.count(i)}
+    @mode = @numbers[@mode_count.index(@mode_count.sort[@mode_count.count - 1])]
     
     render("calculations/stats_form_template.html.erb")
   end
@@ -265,24 +265,24 @@ class CalculationsController < ApplicationController
 
     @maximum = @numbers.max
 
-    # @range = @maximum-@minimum
+    @range = @maximum-@minimum
 
-    # @median = @sorted_numbers[((@count/2)+(1/2))]
+    @median = @sorted[(@count/2)]
 
     @sum = @numbers.sum
 
-    # @mean = @sum/@count
+    @mean = @sum/@count
 
-    # @demeaned=@numbers.map { |i| i - @mean}
-    # @squared = @demeaned.map { |i| i**2}
-    # @variance = @squared.sum / @count
+    @demeaned=@numbers.map { |i| i - @mean}
+    @squared = @demeaned.map { |i| i**2}
+    @variance = @squared.sum / @count
 
-    # @variance = @squared.sum / @count
+    @variance = @squared.sum / @count
 
-    # @standard_deviation = Math.sqrt(@variance)
+    @standard_deviation = Math.sqrt(@variance)
 
-    # @mode_count = @numbers.map { |i| @numbers.count(i)}
-    # @mode = @numbers[@mode_count.index(@mode_count.sort[@mode_count.count - 1])]
+    @mode_count = @numbers.map { |i| @numbers.count(i)}
+    @mode = @numbers[@mode_count.index(@mode_count.sort[@mode_count.count - 1])]
     
     render("calculations/process_stats_form_template.html.erb")
   end
