@@ -1,6 +1,7 @@
-class HomepageController < ApplicationController
+class CalculationsController < ApplicationController
   def homepage
     
+    <table class="table table-hover">
     
     div class="container">
     <div class="row">
@@ -31,19 +32,19 @@ class HomepageController < ApplicationController
         </div>
         
         <div class="col-sm-5">
-            <a href = "https://omnicalc-params-emklick.c9users.io/flexible/square/new"> Square Form </a>
+            <a href = "https://omnicalc-params-emklick.c9users.io/square/new"> Square Form </a>
         </div>
         
         <div class="col-sm-5">
-            <a href = "https://omnicalc-params-emklick.c9users.io/flexible/square_root/new"> Square Root Form </a>
+            <a href = "https://omnicalc-params-emklick.c9users.io/square_root/new"> Square Root Form </a>
         </div>
         
         <div class="col-sm-5">
-            <a href = "https://omnicalc-params-emklick.c9users.io/flexible/payment/new"> Payment Form </a>
+            <a href = "https://omnicalc-params-emklick.c9users.io/payment/new"> Payment Form </a>
         </div>
         
         <div class="col-sm-5">
-            <a href = "https://omnicalc-params-emklick.c9users.io/flexible/random/new"> Random Number Form </a>
+            <a href = "https://omnicalc-params-emklick.c9users.io/random/new"> Random Number Form </a>
         </div>
         
         
@@ -54,11 +55,11 @@ class HomepageController < ApplicationController
         </div>
         
         <div class="col-sm-5">
-            <a href = "https://omnicalc-params-emklick.c9users.io/flexible/word_count/new"> Word Count Form </a>
+            <a href = "https://omnicalc-params-emklick.c9users.io/word_count/new"> Word Count Form </a>
         </div>
         
         <div class="col-sm-5">
-            <a href = "https://omnicalc-params-emklick.c9users.io/flexible/descriptive_stats/new"> Stats Form </a>
+            <a href = "https://omnicalc-params-emklick.c9users.io/descriptive_stats/new"> Stats Form </a>
         </div>
         
         
@@ -70,7 +71,7 @@ class HomepageController < ApplicationController
         </div>
     </div>
 </div>
-
+</table>
 
     
     
