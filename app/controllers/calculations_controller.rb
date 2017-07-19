@@ -287,6 +287,12 @@ class CalculationsController < ApplicationController
     render("calculations/process_stats_form_template.html.erb")
   end
  
+  def homepage
+   
+   
+   render("calculations/homepage_template.html.erb")
+   
+  end   
   
 end
 
