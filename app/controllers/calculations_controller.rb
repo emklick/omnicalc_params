@@ -150,7 +150,7 @@ class CalculationsController < ApplicationController
 
     @count = @numbers.count
 
-    @minimum = @numbers.min
+    @minimum = @numbers.minimum
 
     @maximum = @numbers.max
 
