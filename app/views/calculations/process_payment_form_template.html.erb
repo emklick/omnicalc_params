@@ -24,13 +24,13 @@
     </tr>
 
 <tr>
-    <tr>
+    <t5th>
 
 <h2>Payment Results</h2>
 
     <dl>
         <dt>APR</dt>
-        <dd><%= number_to_percentage(@monthly_interest) %></dd>
+        <dd><%= number_to_percentage(@monthly_interest.round(4)) %></dd>
         
         <dt>Number of years</dt>
         <dd><%= @number_of_years %></dd>
