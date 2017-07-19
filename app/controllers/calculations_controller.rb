@@ -184,7 +184,7 @@ class CalculationsController < ApplicationController
     # The incoming parameters for this action look like {"the_user_number"} => "5"
     # Rails stores that hash in a variable called params
     
-    @user_number = params["the_user_number"].to_param
+    @user_number = params["the_user_number"].to_i
     @squared_number = @user_number**2
  
     render("calculations/process_square_form_template.html.erb")
