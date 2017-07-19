@@ -4,7 +4,7 @@ class CalculationsController < ApplicationController
     # Rails stores that hash in a variable called params
     
     @user_number_flex = params["a_number_flex"].to_i
-    @squared_number_flex = (@user_number**2).round
+    @squared_number_flex = (@user_number**2)
     
     render("calculations/flexible_square_template.html.erb")
   end
@@ -25,7 +25,7 @@ class CalculationsController < ApplicationController
     @number_of_years_flex = params["number_of_years"].to_i
     @present_value_flex = params["present_value"].to_i
     
-    @monthly_interest_percentage_flex = number_to_percentage(@monthly_interest_flex)
+    @monthly_interest_percentage_flex = @monthly_interest_flex/100
     @monthly_interest_per_period_flex = @monthly_interest_percentage_flex/12
     
     @number_of_monthly_payments_flex = @number_of_years_flex*-12
@@ -34,12 +34,12 @@ class CalculationsController < ApplicationController
     
     @denomonator_step_one_flex = (1 - @one_plus_rate_per_period_flex)
     
-    @numerator_flex = (@monthly_interest_per_period*@present_value_flex)
+    @numerator_flex = @monthly_interest_per_period * @present_value_flex
     @denomonator_flex = (@denomonator_step_one_flex)
     
-    @monthly_payment_flex = number_to_currency(@numerator_flex/@denomonator_flex)
+    @monthly_payment_flex = @numerator_flex/@denomonator_flex
   
-    @monthly_interest_flex_rounded=@monthly_interest.round(4)
+    @monthly_interest_flex_rounded=@monthly_interest
    
     
     render("calculations/flexible_payment_template.html.erb")
@@ -65,7 +65,7 @@ class CalculationsController < ApplicationController
   def square_form
     
     @user_number = params["the_user_number"].to_i
-    @squared_number = (@user_number**2).round
+    @squared_number = (@user_number**2)
     
     render("calculations/square_form_template.html.erb")
   end
@@ -186,7 +186,7 @@ class CalculationsController < ApplicationController
     # Rails stores that hash in a variable called params
     
     @user_number = params["the_user_number"].to_i
-    @squared_number = (@user_number**2).round
+    @squared_number = (@user_number**2)
  
     render("calculations/process_square_form_template.html.erb")
   end
