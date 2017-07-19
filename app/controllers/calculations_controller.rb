@@ -39,6 +39,7 @@ class CalculationsController < ApplicationController
     
     @monthly_payment_flex = (@numerator_flex/@denomonator_flex)
   
+    @monthly_interest_flex_rounded=@monthly_interest.round(4)
    
     
     render("calculations/flexible_payment_template.html.erb")
@@ -218,6 +219,8 @@ class CalculationsController < ApplicationController
     @denomonator = (@denomonator_step_one)
     
     @monthly_payment = (@numerator/@denomonator)
+    
+    
     
     # @monthly_payment = (@monthly_interest_per_period*@present_value)/(1-(1+@monthly_interest_per_period)**(@number_of_monthly_payments))
     
