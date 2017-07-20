@@ -21,11 +21,12 @@ class CalculationsController < ApplicationController
   
   def flex_payment
     
+    
     @monthly_interest_flex = params["basis_points"].to_f
     @number_of_years_flex = params["number_of_years"].to_i
     @present_value_flex = params["present_value"].to_i
     
-    @monthly_interest_percentage_flex = @monthly_interest_flex/100
+    @monthly_interest_percentage_flex = @monthly_interest_flex/10000
     @monthly_interest_per_period_flex = @monthly_interest_percentage_flex/12
     
     @number_of_monthly_payments_flex = @number_of_years_flex*-12
