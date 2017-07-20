@@ -1,3 +1,33 @@
-<h1>Flexible Payment</h1>
+<h1>Omnicalc Params</h1>
 
-<p> A <%= @number_of_years_flex %> year loan of <%= number_to_currency(@present_value_flex) %>, with an interest rate of is <%= number_to_percentage(@monthly_interest_basispoints_flex/100) %>, requires a monthly payment of <%= number_to_currency(@monthly_payment_flex) %> </p>
+  <table>
+     <tr>
+     <th>Part I Targets</th>
+     <td><a href = "https://omnicalc-params-emklick.c9users.io/flexible/square/"> Flexible Square Example </a></td>
+     <td><a href = "https://omnicalc-params-emklick.c9users.io/flexible/square_root/"> Flexible Square Root Example </a></td>
+     <td><a href = "https://omnicalc-params-emklick.c9users.io/flexible/payment/new"> Flexible Payment Example </a></td>
+     <td><a href = "https://omnicalc-params-emklick.c9users.io/flexible/random/"> Flexible Random Example </a></td>
+    </tr>
+    
+    <tr>
+     <th>Part II Targets</th>
+     <td><a href = "https://omnicalc-params-emklick.c9users.io/square/new"> Square Form </a></td>
+     <td><a href = "https://omnicalc-params-emklick.c9users.io/square_root/new"> Square Root Form </a></td>
+     <td><a href = "https://omnicalc-params-emklick.c9users.io/payment/new"> Payment Form </a></td>
+     <td><a href = "https://omnicalc-params-emklick.c9users.io/random/new"> Random Number Form </a></td>
+    </tr>
+    
+    <tr>
+     <th>Part III Targets</th>
+     <td><a href = "https://omnicalc-params-emklick.c9users.io/word_count/new"> Word Count Form </a></td>
+     <td><a href = "https://omnicalc-params-emklick.c9users.io/descriptive_stats/new"> Stats Form </a></td>
+    </tr>
+
+ </table>
+
+      
+      <h2>Flexible Payment</h1>
+         
+         <dl>
+          <p> A <%= @number_of_years_flex %> year loan of <%= number_to_currency(@present_value_flex) %>, with an interest rate of is <%= number_to_percentage(@monthly_interest_percentage_flex) %>, requires a monthly payment of <%=number_to_currency(@monthly_payment_long_flex)%>. </p>
+         </dl>

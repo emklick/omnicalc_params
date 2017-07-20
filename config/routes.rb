@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
   
-  get("/homepage",        { :controller => "calclations", :action => "homepage" })
-  
-  
   
   get("/flexible/square/:a_number_flex", { :controller => "calculations", :action => "flex_square" })
   
@@ -42,6 +39,8 @@ Rails.application.routes.draw do
   get("/descriptive_stats/results", {:controller => "calculations", :action => "process_stats_form"})
   
   
+  
+  get("/homepage", {:controller => "calculations", :action => "homepage"})
   
   
   
