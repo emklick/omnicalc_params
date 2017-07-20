@@ -4,7 +4,7 @@ class CalculationsController < ApplicationController
     # Rails stores that hash in a variable called params
     
     @user_number_flex = params["a_number_flex"].to_i
-    @squared_number_flex = (@user_number**2)
+    @squared_number_flex = (@user_number_flex**2)
     
     render("calculations/flexible_square_template.html.erb")
   end
@@ -32,14 +32,14 @@ class CalculationsController < ApplicationController
     
     @one_plus_rate_per_period_flex = (1 + @monthly_interest_per_period_flex)**@number_of_monthly_payments_flex
     
-    @denomonator_step_one_flex = (1 - @one_plus_rate_per_period_flex)
+    @denomonator_step_one_flex = (1-@one_plus_rate_per_period_flex)
     
-    @numerator_flex = @monthly_interest_per_period_flex * @present_value_flex
+    @numerator_flex = (@monthly_interest_per_period_flex*@present_value_flex)
     @denomonator_flex = (@denomonator_step_one_flex)
     
-    @monthly_payment_flex = @numerator_flex/@denomonator_flex
+    @monthly_payment_flex = (@numerator_flex/@denomonator_flex)
   
-   
+   @monthly_payment_long_flex = (@monthly_interest_per_period_flex*@present_value_flex)/(1-(1 + @monthly_interest_per_period_flex)**@number_of_monthly_payments_flex)
     
     render("calculations/flexible_payment_template.html.erb")
   end
